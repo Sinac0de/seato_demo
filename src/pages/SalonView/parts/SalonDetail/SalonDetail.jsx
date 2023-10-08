@@ -4,8 +4,21 @@ import CallIcon from "src/assets/icons/CallIcon";
 import ClockIcon from "src/assets/icons/ClockIcon";
 import TextareaInput from "src/components/common/TextareaInput";
 import InputComponent from "src/components/common/InputComponent";
+import { useFormik } from "formik";
+
+const onSubmit = () => {
+  // submit form
+};
 
 const SalonDetail = ({ salon }) => {
+  /* --- formik --- */
+  const formik = useFormik({
+    initialValues: {
+      serviceFeedback: "",
+    },
+    onSubmit,
+  });
+
   const [userRate, setUserRate] = useState(null);
   const [userName, setUserName] = useState("");
   const [userComment, setUserComment] = useState("");
@@ -117,6 +130,11 @@ const SalonDetail = ({ salon }) => {
             <InputComponent
               onChange={userNameChangeHandler}
               id="name"
+              value={formik.values.loginPass}
+              touched={formik.touched}
+              errors={formik.errors}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
               placeHolder="نام و نام خانوادگی"
               type="text"
             />
@@ -126,7 +144,12 @@ const SalonDetail = ({ salon }) => {
           </div>
           <TextareaInput
             id="Experience"
-            onChange={userCommentChangeHandler}
+            value={formik.values.loginPass}
+            touched={formik.touched}
+            errors={formik.errors}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            // onChange={userCommentChangeHandler}
             placeHolder="تجربه خود را درباره این سالن اینجا بنویسید"
           />
           <button
