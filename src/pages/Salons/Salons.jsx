@@ -12,7 +12,9 @@ const Salons = () => {
   const fetchSalonsHandler = useCallback(async () => {
     setIsLoading(true);
     try {
-      const response = await fetch("http://seato1.ir/api/salons/");
+      const response = await fetch(
+        "https://api.npoint.io/7f8fef079b5d7d778da1/"
+      );
       if (!response.ok) {
         // throw new Error("Something went wrong!");
       }

@@ -11,7 +11,9 @@ const RecentComments = () => {
     try {
       setIsLoading(true);
 
-      const response = await fetch("http://seato1.ir/api/comments/");
+      const response = await fetch(
+        "https://api.npoint.io/548705d79b50ebcfcfe6"
+      );
       if (!response.ok) {
         throw new Error("Something went wrong!");
       }
