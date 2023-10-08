@@ -1,7 +1,20 @@
+import { useFormik } from "formik";
 import checkSignImg from "src/assets/images/checksign.png";
 import TextareaInput from "src/components/common/TextareaInput";
 
+const onSubmit = () => {
+  // submit
+};
+
 function ServiceFeedback() {
+  /* --- formik --- */
+  const formik = useFormik({
+    initialValues: {
+      serviceFeedback: "",
+    },
+    onSubmit,
+  });
+
   return (
     <div className="bg-[#DADBDC9C] w-full lg:w-1/2 max-w-[612px] p-10 rounded-[28px] relative">
       <div className="flex flex-col items-end">
@@ -13,19 +26,27 @@ function ServiceFeedback() {
             از چیزهایی که نیاز دارید برای ما بنویسید
           </p>
         </div>
+        {/* form */}
         <form className="flex flex-col gap-3 items-end w-full lg:w-3/5 mt-3">
           <TextareaInput
             id="serviceFeedback"
             name="serviceFeedback"
-            placeHolder="پیشنهادات، انتقادات خود را اینجا بنویسید"
+            value={formik.values.serviceFeedback}
+            errors={formik.errors}
+            touched={formik.touched}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            placeHolder="پیشنهادات و انتقادات خود را اینجا بنویسید"
           />
-          <button className="bg-[#E0BFB8] font-bold md:text-base text-xs p-3 px-8 rounded-full w-fit">
-            درخواست پشتیبانی
+          <button
+            type="button"
+            className="bg-[#E0BFB8] font-bold md:text-base text-xs p-3 px-8 rounded-full w-fit"
+          >
+            ارسال پیشنهاد
           </button>
         </form>
       </div>
       {/* image */}
-
       <img
         src={checkSignImg}
         alt="Check sign"

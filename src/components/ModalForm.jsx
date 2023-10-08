@@ -22,7 +22,7 @@ function ModalForm({ onClose }) {
   };
 
   const handleLoginError = (error) => {
-    alert(error.message);
+    // alert(error.message);
     setIsLoading(false);
   };
 

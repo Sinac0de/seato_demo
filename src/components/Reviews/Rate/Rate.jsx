@@ -33,7 +33,7 @@ const Rate = ({ salonId }) => {
         }
       })
       .catch((err) => {
-        alert(err.message);
+        // alert(err.message);
       });
   };
 

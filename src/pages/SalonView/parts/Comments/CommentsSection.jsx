@@ -33,7 +33,7 @@ const CommentsSection = (props) => {
     try {
       const response = await fetch("http://seato1.ir/api/salons/" + id);
       if (!response.ok) {
-        throw new Error("Something went wrong!");
+        // throw new Error("Something went wrong!");
       }
 
       const data = await response.json();
@@ -48,7 +48,7 @@ const CommentsSection = (props) => {
       });
       setComments(transformed);
     } catch (error) {
-      alert(error);
+      // alert(error);
     }
   }, []);
 

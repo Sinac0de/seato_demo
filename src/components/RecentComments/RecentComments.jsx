@@ -26,11 +26,10 @@ const RecentComments = () => {
         };
       });
       setComments(transformedComments);
+      setIsLoading(false);
     } catch (error) {
-      alert(error);
+      // alert(error);
     }
-
-    setIsLoading(false);
   }, []);
 
   useEffect(() => {

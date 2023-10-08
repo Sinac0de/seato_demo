@@ -7,15 +7,15 @@ const LoginModal = ({ defaultType }) => {
   const [formType, setFormType] = useState(defaultType);
   const [showModal, setShowModal] = useState(true);
 
-  return (
+  return formType === "login" ? (
+    //login
     <Modal isOpen={showModal} isForm>
-      {formType === "login" ? (
-        //login
-        <LoginForm setShowModal={setShowModal} setFormType={setFormType} />
-      ) : (
-        //Sign up
-        <SignUpForm setShowModal={setShowModal} setFormType={setFormType} />
-      )}
+      <LoginForm setShowModal={setShowModal} setFormType={setFormType} />
+    </Modal>
+  ) : (
+    //Sign up
+    <Modal isOpen={showModal} isForm>
+      <SignUpForm setShowModal={setShowModal} setFormType={setFormType} />
     </Modal>
   );
 };

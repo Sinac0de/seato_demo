@@ -9,7 +9,7 @@ import LoginModal from "../../components/Modal/LoginModal";
 function Home() {
   return (
     <section className="min-h-screen">
-      <LoginModal defaultType="login" />
+      {/* <LoginModal defaultType="login" /> */}
       <Intro />
       {/* slider of limited salons */}
       <SalonSlider />

@@ -1,13 +1,33 @@
-const TextareaInput = ({ id, name, placeHolder, onChange }) => {
+import { Fragment } from "react";
+
+const TextareaInput = ({
+  id,
+  name,
+  errors,
+  touched,
+  value,
+  onBlur,
+  placeHolder,
+  onChange,
+}) => {
   return (
-    <textarea
-      id={id}
-      name={name}
-      placeholder={placeHolder}
-      onChange={onChange}
-      className="w-full p-3 rounded-[14px] shadow-md text-[#5A5A5A]placeholder:text-[#5A5A5A] text-sm placeholder:text-sm placeholder:font-normal font-normal"
-      rows={6}
-    ></textarea>
+    <Fragment>
+      <textarea
+        id={id}
+        name={name}
+        placeholder={placeHolder}
+        onChange={onChange}
+        value={value}
+        onBlur={onBlur}
+        title={touched[id] ? errors[id] : ""}
+        className={`${
+          touched[id] &&
+          errors[id] &&
+          "text-red-600 placeholder:text-red-600 border-red-500"
+        } w-full p-3 rounded-[14px] shadow-md outline-none border text-[#5A5A5A] placeholder:text-[#5A5A5A] text-sm placeholder:text-sm placeholder:font-normal font-normal`}
+        rows={6}
+      ></textarea>
+    </Fragment>
   );
 };
 

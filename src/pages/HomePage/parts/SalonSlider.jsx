@@ -16,7 +16,7 @@ const SalonSlider = () => {
 
       const response = await fetch("http://seato1.ir/api/salons/");
       if (!response.ok) {
-        throw new Error("Something went wrong!");
+        // throw new Error("Something went wrong!");
       }
 
       const data = await response.json();
@@ -32,11 +32,10 @@ const SalonSlider = () => {
         };
       });
       setSalons(transformed);
+      setLoading(false);
     } catch (error) {
       // alert(error);
     }
-
-    setLoading(false);
   }, []);
 
   useEffect(() => {

@@ -66,7 +66,7 @@ const SalonDetail = ({ salon }) => {
         }
       })
       .catch((err) => {
-        alert(err.message);
+        // alert(err.message);
       });
   };
 

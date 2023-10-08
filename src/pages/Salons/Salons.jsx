@@ -14,7 +14,7 @@ const Salons = () => {
     try {
       const response = await fetch("http://seato1.ir/api/salons/");
       if (!response.ok) {
-        throw new Error("Something went wrong!");
+        // throw new Error("Something went wrong!");
       }
 
       const data = await response.json();
@@ -27,10 +27,10 @@ const Salons = () => {
         rating: salonData.rating,
       }));
       setSalonList(transformed);
+      setIsLoading(false);
     } catch (error) {
-      alert(error.message);
+      // alert(error.message);
     }
-    setIsLoading(false);
   }, []);
 
   useEffect(() => {

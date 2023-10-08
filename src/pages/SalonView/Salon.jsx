@@ -20,7 +20,7 @@ function Salon() {
     try {
       const response = await fetch("http://seato1.ir/api/salons/" + salonid);
       if (!response.ok) {
-        throw new Error("Something went wrong!");
+        // throw new Error("Something went wrong!");
       }
 
       const data = await response.json();
@@ -39,7 +39,7 @@ function Salon() {
 
       setDetail(detailData);
     } catch (error) {
-      alert(error.message);
+      // alert(error.message);
     }
   }, []);
 

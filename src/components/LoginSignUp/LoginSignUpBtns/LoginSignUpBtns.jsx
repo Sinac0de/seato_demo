@@ -2,10 +2,7 @@ import { Fragment } from "react";
 import LoginModal from "src/components/Modal/LoginModal";
 
 const LoginSignUpBtns = ({ isSidebar, setIsNavCollapsed }) => {
-  const handleShowModal = (type) => {
-    // setIsNavCollapsed(true);
-    return <LoginModal defaultType={type} />;
-  };
+  const handleShowModal = () => {};
   return isSidebar ? (
     <Fragment>
       <button

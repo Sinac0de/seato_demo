@@ -78,7 +78,7 @@ const Comment = ({ commentId }) => {
         }
       })
       .catch((err) => {
-        alert(err.message);
+        // alert(err.message);
       });
   };
 

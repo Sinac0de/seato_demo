@@ -1,7 +1,20 @@
+import { useFormik } from "formik";
 import supportImg from "src/assets/images/support.png";
 import InputComponent from "src/components/common/InputComponent";
 
+const onSubmit = () => {
+  //submit form
+};
+
 function SupportForm() {
+  /* --- formik --- */
+  const formik = useFormik({
+    initialValues: {
+      serviceFeedback: "",
+    },
+    onSubmit,
+  });
+
   return (
     <div className="bg-[#DADBDC9C] w-full lg:w-1/2 max-w-[612px] p-10 rounded-[28px] relative">
       <div className="flex flex-col items-end">
@@ -16,11 +29,34 @@ function SupportForm() {
         <form className="flex flex-col gap-3 items-end w-full lg:w-3/5 mt-3">
           <InputComponent
             id="name"
+            value={formik.values.loginPass}
+            touched={formik.touched}
+            errors={formik.errors}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
             placeHolder="نام و نام خانوادگی"
             type="text"
           />
-          <InputComponent id="tel" placeHolder="شماره موبایل" type="tel" />
-          <InputComponent id="email" placeHolder="ایمیل" type="email" />
+          <InputComponent
+            id="tel"
+            value={formik.values.loginPass}
+            touched={formik.touched}
+            errors={formik.errors}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            placeHolder="شماره موبایل"
+            type="tel"
+          />
+          <InputComponent
+            id="email"
+            value={formik.values.loginPass}
+            touched={formik.touched}
+            errors={formik.errors}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            placeHolder="ایمیل"
+            type="email"
+          />
           <button className="bg-[#E0BFB8] font-bold text-xs md:text-base p-3 px-8 rounded-full w-fit">
             درخواست پشتیبانی
           </button>
