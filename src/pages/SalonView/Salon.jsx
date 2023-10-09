@@ -19,7 +19,7 @@ function Salon() {
   const fetchSalonHandler = useCallback(async () => {
     try {
       const response = await fetch(
-        "https://api.npoint.io/7f8fef079b5d7d778da1/id" + salonid
+        "https://api.npoint.io/7f8fef079b5d7d778da1/" + salonid
       );
       if (!response.ok) {
         // throw new Error("Something went wrong!");
