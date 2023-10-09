@@ -88,7 +88,7 @@ const SalonDetail = ({ salon }) => {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row justify-between pt-16 relative bg-gradient-to-b from-[#FDDDD780] to-[#B6BCCB80] min-h-[60%] max-h-screen">
+    <div className="flex flex-col lg:flex-row justify-between pt-16 relative bg-gradient-to-b from-[#FDDDD780] to-[#B6BCCB80] min-h-[60%] lg:max-h-screen">
       {/* image */}
       <div className="lg:w-1/2">
         <div className="rounded-tl-[173px] absolute z-0 bg-gradient-to-b from-[#D3B5B0AB] to-[#8E94A224] w-[80%] lg:w-[40%] h-1/4 lg:h-full top-4 lg:top-0 right-0 ">

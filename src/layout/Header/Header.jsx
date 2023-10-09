@@ -15,7 +15,7 @@ const Header = () => {
   return (
     <header className="p-10 lg:p-8 px-14 relative bg-[#FDDDD780] font-medium text-[15px]">
       <div
-        className={`lg:hidden absolute right-7 top-7 w-[50px] z-10`}
+        className={`lg:hidden absolute right-8 top-10 w-[35px] z-10`}
         onClick={handleNavCollapse}
       >
         <HamMenuIcon

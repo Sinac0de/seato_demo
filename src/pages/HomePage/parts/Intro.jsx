@@ -22,7 +22,7 @@ const Intro = () => {
               alt="Persian logo of Seato"
             />
           </div>
-          <div className="px-10 flex flex-col gap-10">
+          <div className="px-3 lg:px-10 flex flex-col gap-10">
             <h3 className="text-xl font-light">
               سیتو یک پلتفرم نظر سنجی و کیفیت و اعتبار دهی به سالن های زیبایی می
               باشد
