@@ -8,13 +8,13 @@ export const modalSlice = createSlice({
   name: "modal",
   initialState,
   reducers: {
-    toggle: (state) => {
+    toggleModalOpen: (state) => {
       state.isOpen = !state.isOpen;
     },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { toggle } = modalSlice.actions;
+export const { toggleModalOpen } = modalSlice.actions;
 
 export default modalSlice.reducer;

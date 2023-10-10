@@ -1,7 +1,9 @@
 import { Fragment } from "react";
+import { useDispatch } from "react-redux";
 import LoginModal from "src/components/Modal/LoginModal";
 
-const LoginSignUpBtns = ({ isSidebar, setIsNavCollapsed }) => {
+const LoginSignUpBtns = ({ isSidebar }) => {
+  const dispatch = useDispatch();
   const handleShowModal = () => {};
   return isSidebar ? (
     <Fragment>

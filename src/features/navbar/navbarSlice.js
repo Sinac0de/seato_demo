@@ -1,20 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  isOpen: false,
+  isNavCollapse: true,
 };
 
 export const modalSlice = createSlice({
   name: "navbar",
   initialState,
   reducers: {
-    toggle: (state) => {
-      state.isOpen = !state.isOpen;
+    toggleNavCollapse: (state) => {
+      state.isNavCollapse = !state.isNavCollapse;
     },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { toggle } = modalSlice.actions;
+export const { toggleNavCollapse } = modalSlice.actions;
 
 export default modalSlice.reducer;

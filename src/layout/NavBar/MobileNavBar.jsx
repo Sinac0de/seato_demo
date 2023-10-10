@@ -2,8 +2,12 @@ import { Fragment } from "react";
 import { NavLink } from "react-router-dom";
 import seatoLogo from "src/assets/images/seatoLogo.png";
 import LoginSignUpBtns from "src/components/LoginSignUp/LoginSignUpBtns/LoginSignUpBtns";
+import { toggleNavCollapse } from "../../features/navbar/navbarSlice";
+import { useDispatch, useSelector } from "react-redux";
 
-const MobileNavBar = ({ isNavCollapsed, setIsNavCollapsed }) => {
+const MobileNavBar = () => {
+  const isNavCollapsed = useSelector((state) => state.modal.isNavCollapsed);
+  const dispatch = useDispatch();
   return (
     <Fragment>
       {/* behind the nav bar */}
@@ -13,7 +17,7 @@ const MobileNavBar = ({ isNavCollapsed, setIsNavCollapsed }) => {
             ? "opacity-0 translate-x-full"
             : "opacity-100 translate-x-0"
         } w-full lg:hidden h-full fixed right-0 left-0 bottom-0 top-0 z-[998] bg-black/70 transition-opacity duration-500`}
-        onClick={() => setIsNavCollapsed(true)}
+        onClick={() => dispatch(toggleNavCollapse)}
       ></div>
 
       {/* actual nav bar */}
@@ -31,7 +35,7 @@ const MobileNavBar = ({ isNavCollapsed, setIsNavCollapsed }) => {
           <ul className="flex flex-col items-center text-xl gap-6 text-[15px] flex-1 py-5 overflow-y-auto">
             <li className="w-full flex px-5 item">
               <NavLink
-                onClick={() => setIsNavCollapsed(true)}
+                onClick={() => dispatch(toggleNavCollapse)}
                 to="/"
                 className={({ isActive, isPending }) =>
                   isPending
@@ -46,7 +50,7 @@ const MobileNavBar = ({ isNavCollapsed, setIsNavCollapsed }) => {
             </li>
             <li className="w-full flex px-5 item">
               <NavLink
-                onClick={() => setIsNavCollapsed(true)}
+                onClick={() => dispatch(toggleNavCollapse)}
                 to="/salons"
                 className={({ isActive, isPending }) =>
                   isPending
@@ -61,7 +65,7 @@ const MobileNavBar = ({ isNavCollapsed, setIsNavCollapsed }) => {
             </li>
             <li className="w-full flex px-5 item">
               <NavLink
-                onClick={() => setIsNavCollapsed(true)}
+                onClick={() => dispatch(toggleNavCollapse)}
                 to="/About"
                 className={({ isActive, isPending }) =>
                   isPending
@@ -77,7 +81,7 @@ const MobileNavBar = ({ isNavCollapsed, setIsNavCollapsed }) => {
           </ul>
           {/* user actions */}
           <div className="flex flex-col gap-5 px-10 py-10">
-            <LoginSignUpBtns isSidebar setIsNavCollapsed={setIsNavCollapsed} />
+            <LoginSignUpBtns isSidebar />
           </div>
         </nav>
       </div>
